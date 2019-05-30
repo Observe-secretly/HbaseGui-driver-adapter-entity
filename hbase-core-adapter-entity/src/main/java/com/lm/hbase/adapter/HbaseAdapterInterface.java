@@ -1,7 +1,6 @@
 package com.lm.hbase.adapter;
 
 import java.io.IOException;
-import java.sql.Connection;
 import java.util.List;
 import java.util.Map;
 import java.util.Vector;
@@ -33,14 +32,6 @@ public interface HbaseAdapterInterface {
      * @throws IOException
      */
     public void init(String zkPort, String zkQuorum, String hbaseMaster, String znodeParent) throws IOException;
-
-    /**
-     * 获取Hbase连接
-     * 
-     * @return
-     * @throws Exception
-     */
-    public Connection getConn() throws Exception;
 
     /**
      * 关闭Hbase连接
