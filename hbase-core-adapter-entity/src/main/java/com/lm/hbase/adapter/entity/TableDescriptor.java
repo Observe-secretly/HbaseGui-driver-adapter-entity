@@ -19,6 +19,11 @@ public class TableDescriptor {
      */
     private List<ColumnFamilyDescriptor> cfDesc;
 
+    /**
+     * 原始HbaseClient返回的String类型表结构
+     */
+    private String                       hDesc;
+
     public String getTableName() {
         return tableName;
     }
@@ -33,6 +38,19 @@ public class TableDescriptor {
 
     public void setCfDesc(List<ColumnFamilyDescriptor> cfDesc) {
         this.cfDesc = cfDesc;
+    }
+
+    public String gethDesc() {
+        return hDesc;
+    }
+
+    public void sethDesc(String hDesc) {
+        this.hDesc = hDesc;
+    }
+
+    @Override
+    public String toString() {
+        return gethDesc();
     }
 
 }
