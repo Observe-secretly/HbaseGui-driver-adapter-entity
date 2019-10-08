@@ -7,6 +7,7 @@ import java.util.Vector;
 
 import com.lm.hbase.adapter.entity.HBasePageModel;
 import com.lm.hbase.adapter.entity.HbaseQualifier;
+import com.lm.hbase.adapter.entity.TableDescriptor;
 
 /**
  * Hbase适配器接口
@@ -140,5 +141,13 @@ public interface HbaseAdapterInterface {
      * @throws Exception
      */
     public void deleteNameSpace(String name) throws Exception;
+
+    /**
+     * 获取表详情
+     * 
+     * @return
+     * @throws Exception
+     */
+    public TableDescriptor getTableDescriptor() throws Exception;
 
 }
