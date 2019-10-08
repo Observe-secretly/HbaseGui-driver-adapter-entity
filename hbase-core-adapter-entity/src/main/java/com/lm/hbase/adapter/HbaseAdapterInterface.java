@@ -148,6 +148,6 @@ public interface HbaseAdapterInterface {
      * @return
      * @throws Exception
      */
-    public TableDescriptor getTableDescriptor() throws Exception;
+    public TableDescriptor getTableDescriptor(String name) throws Exception;
 
 }
