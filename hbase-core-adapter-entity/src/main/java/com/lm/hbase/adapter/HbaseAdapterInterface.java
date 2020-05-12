@@ -5,6 +5,7 @@ import java.util.List;
 import java.util.Map;
 import java.util.Vector;
 
+import com.lm.hbase.adapter.entity.CompressionEnum;
 import com.lm.hbase.adapter.entity.HBasePageModel;
 import com.lm.hbase.adapter.entity.HbaseQualifier;
 import com.lm.hbase.adapter.entity.TableDescriptor;
@@ -47,7 +48,7 @@ public interface HbaseAdapterInterface {
      * @param tableName 表名
      * @param columnFamilys 列族
      */
-    public void createTable(String tableName, byte[][] splitKeys, byte[] startKey, byte[] endKey, int numRegions,
+    public void createTable(String tableName, byte[][] splitKeys, byte[] startKey, byte[] endKey, int numRegions, CompressionEnum compression,
                             ColumnFamilyParam... columnFamilys) throws Exception;
 
     /**
@@ -112,8 +113,8 @@ public interface HbaseAdapterInterface {
 
     /**
      * 计算表数据总数
-     * 
-     * @param tablename
+     *
+     * @param tableName
      * @return
      */
     public long rowCount(String tableName) throws Exception;
