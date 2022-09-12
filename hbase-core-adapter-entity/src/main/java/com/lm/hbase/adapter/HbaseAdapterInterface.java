@@ -1,6 +1,7 @@
 package com.lm.hbase.adapter;
 
 import java.io.IOException;
+import java.io.Serializable;
 import java.util.List;
 import java.util.Map;
 import java.util.Vector;
@@ -15,7 +16,7 @@ import com.lm.hbase.adapter.entity.TableDescriptor;
  * 
  * @author limin May 30, 2019 2:45:42 PM
  */
-public interface HbaseAdapterInterface {
+public interface HbaseAdapterInterface extends Serializable {
 
     /**
      * 获取适配器版本信息
@@ -48,8 +49,8 @@ public interface HbaseAdapterInterface {
      * @param tableName 表名
      * @param columnFamilys 列族
      */
-    public void createTable(String tableName, byte[][] splitKeys, byte[] startKey, byte[] endKey, int numRegions, CompressionEnum compression,
-                            ColumnFamilyParam... columnFamilys) throws Exception;
+    public void createTable(String tableName, byte[][] splitKeys, byte[] startKey, byte[] endKey, int numRegions,
+                            CompressionEnum compression, ColumnFamilyParam... columnFamilys) throws Exception;
 
     /**
      * 创建表
